@@ -1,0 +1,43 @@
+# ========== 기본 빌드 관련 ==========
+/build/
+out/
+target/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Test 결과
+/test-results/
+*.log
+
+# ========== IDE 설정 파일 ==========
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+
+# Eclipse / STS
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ========== OS / 기타 ==========
+.DS_Store
+.env

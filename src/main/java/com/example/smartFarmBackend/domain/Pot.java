@@ -11,6 +11,9 @@ public class Pot {
     @Column(name = "pot_id")
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    private Plant plant;
+
     private double humidity;
     private double temperature;
     private double tts_density;

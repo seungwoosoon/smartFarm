@@ -44,36 +44,36 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-def frontendDir = "$projectDir/src/main/reactfront"
-
-sourceSets {
-	main {
-		resources { srcDirs = ["$projectDir/src/main/resources"]
-		}
-	}
-}
-
-processResources { dependsOn "copyReactBuildFiles" }
-
-tasks.register('installReact', Exec) {
-	workingDir "$frontendDir"
-	inputs.dir "$frontendDir"
-	group = BasePlugin.BUILD_GROUP
-
-	commandLine "/opt/homebrew/bin/npm", "install"
-}
-tasks.register('buildReact', Exec) {
-	dependsOn "installReact"
-	workingDir "$frontendDir"
-	inputs.dir "$frontendDir"
-	group = BasePlugin.BUILD_GROUP
-
-	commandLine "/opt/homebrew/bin/npm", "run-script", "build"
-}
-
-tasks.register('copyReactBuildFiles', Copy) {
-	dependsOn "buildReact"
-	from "$frontendDir/build"
-	into "$projectDir/src/main/resources/static"
-}
+//
+//def frontendDir = "$projectDir/src/main/reactfront"
+//
+//sourceSets {
+//	main {
+//		resources { srcDirs = ["$projectDir/src/main/resources"]
+//		}
+//	}
+//}
+//
+//processResources { dependsOn "copyReactBuildFiles" }
+//
+//tasks.register('installReact', Exec) {
+//	workingDir "$frontendDir"
+//	inputs.dir "$frontendDir"
+//	group = BasePlugin.BUILD_GROUP
+//
+//	commandLine "/opt/homebrew/bin/npm", "install"
+//}
+//tasks.register('buildReact', Exec) {
+//	dependsOn "installReact"
+//	workingDir "$frontendDir"
+//	inputs.dir "$frontendDir"
+//	group = BasePlugin.BUILD_GROUP
+//
+//	commandLine "/opt/homebrew/bin/npm", "run-script", "build"
+//}
+//
+//tasks.register('copyReactBuildFiles', Copy) {
+//	dependsOn "buildReact"
+//	from "$frontendDir/build"
+//	into "$projectDir/src/main/resources/static"
+//}
